@@ -22,11 +22,11 @@ public class MainActivity extends AppCompatActivity {
         btn = findViewById(R.id.buttonId);
         imBtn = findViewById(R.id.imageButtonId);
 
-        btn.setOnClickListener(new Listener());
 
-       imBtn.setOnClickListener(new Listener());
+ /*    btn.setOnClickListener(new Listener());
+       imBtn.setOnClickListener(new Listener());*/
     }
-
+/*
     class Listener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
@@ -35,5 +35,13 @@ public class MainActivity extends AppCompatActivity {
             else if(v.getId() == R.id.imageButtonId)
                 setText.setText("Welcome!! imageButton");
         }
+    }
+ */
+
+    public void setListener(View view) {
+        if(view.getId() == R.id.buttonId)
+            setText.setText("Welcome!! Button");
+        else if(view.getId() == R.id.imageButtonId)
+            setText.setText("Welcome!! imageButton");
     }
 }
