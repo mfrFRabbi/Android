@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
@@ -42,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void setListener(View view) {
         if(view.getId() == R.id.buttonId)
-            Toast.makeText(this,"welcome!! button",Toast.LENGTH_SHORT).show();
+            Log.d("tag","Message");
         else if(view.getId() == R.id.imageButtonId) {
             Toast toast = Toast.makeText(this,"Welcome!! imageButton",Toast.LENGTH_SHORT);
             toast.setGravity(Gravity.CENTER,0,0);
