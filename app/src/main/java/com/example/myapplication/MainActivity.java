@@ -6,51 +6,39 @@ import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-private EditText one,two;
-private Button plus,minus;
-private TextView setText;
-double a,b;
+    private ImageView img1, img2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        one = findViewById(R.id.firstText);
-        two = findViewById(R.id.secondText);
-        plus = findViewById(R.id.buttonId);
-        minus = findViewById(R.id.buttonId2);
-        setText = findViewById(R.id.resId);
+        img1 = findViewById(R.id.image1);
+        img2 = findViewById(R.id.image2);
 
     }
 
     public void setListener(View view) {
-
-
-        try {
-            a = Double.parseDouble(one.getText().toString());
-            b = Double.parseDouble(one.getText().toString());
-            if(view.getId() == R.id.buttonId){
-                double res;
-                res = a+b;
-                setText.setText(String.valueOf(res));
-            }
-            else if(view.getId() == R.id.buttonId2) {
-                double res;
-                res = a-b;
-                setText.setText(String.valueOf(res));
-            }
-        }catch (Exception e){
-            Toast toast = Toast.makeText(this,"Please Enter Number",Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER_VERTICAL|Gravity.START ,0,90);
+        if (view.getId() == R.id.image1) {
+            LayoutInflater inflater = getLayoutInflater();
+            View view1 = inflater.inflate(R.layout.custom_layout,findViewById(R.id.customLayout));
+            Toast toast = new Toast(this);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER,0,0);
+            toast.setView(view1);
             toast.show();
+        } else if (view.getId() == R.id.image2) {
+
         }
 
     }
