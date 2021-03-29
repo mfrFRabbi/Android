@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     private TextView setText;
     private Button btn,imAndTextBtn;
     private ImageButton imBtn;
@@ -22,16 +22,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn = findViewById(R.id.buttonId);
         imBtn = findViewById(R.id.imageButtonId);
 
-        btn.setOnClickListener(this);
+        btn.setOnClickListener(new Listener());
 
-       imBtn.setOnClickListener(this);
+       imBtn.setOnClickListener(new Listener());
     }
 
-    @Override
-    public void onClick(View v) {
-        if(v.getId() == R.id.buttonId)
-            setText.setText("Welcome!! Button");
-        if(v.getId() == R.id.imageButtonId)
-            setText.setText("Welcome!! imageButton");
+    class Listener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            if(v.getId() == R.id.buttonId)
+                setText.setText("Welcome!! Button");
+            else if(v.getId() == R.id.imageButtonId)
+                setText.setText("Welcome!! imageButton");
+        }
     }
 }
