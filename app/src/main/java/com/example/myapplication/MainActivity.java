@@ -4,10 +4,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private TextView setText;
@@ -40,8 +42,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void setListener(View view) {
         if(view.getId() == R.id.buttonId)
-            setText.setText("Welcome!! Button");
-        else if(view.getId() == R.id.imageButtonId)
-            setText.setText("Welcome!! imageButton");
+            Toast.makeText(this,"welcome!! button",Toast.LENGTH_SHORT).show();
+        else if(view.getId() == R.id.imageButtonId) {
+            Toast toast = Toast.makeText(this,"Welcome!! imageButton",Toast.LENGTH_SHORT);
+            toast.setGravity(Gravity.CENTER,0,0);
+            toast.show();
+        }
     }
 }
