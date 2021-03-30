@@ -21,9 +21,11 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
-    private RadioButton milk, sugar, water;
     private Button btn;
     private TextView setText;
+    private RadioButton selectedFood;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
 
         radioGroup = findViewById(R.id.radioGroup);
 
-        milk = findViewById(R.id.milkCheB);
-        sugar = findViewById(R.id.sugarCheB);
-        water = findViewById(R.id.waterCheB);
         btn = findViewById(R.id.showBtnID);
         setText = findViewById(R.id.showInTextView);
 
@@ -45,18 +44,10 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
 
         if (view.getId() == R.id.showBtnID) {
-            StringBuilder strBuilder = new StringBuilder();
+            int select = radioGroup.getCheckedRadioButtonId();
 
-            if (milk.isChecked()) {
-                strBuilder.append(milk.getText().toString() + " is ordered" + "\n");
-            }
-            if (water.isChecked()) {
-                strBuilder.append(water.getText().toString() + " is ordered" + "\n");
-            }
-            if (sugar.isChecked()) {
-                strBuilder.append(sugar.getText().toString() + " is ordered" + "\n");
-            }
-            setText.setText(strBuilder);
+            selectedFood = findViewById(select);
+            setText.setText(selectedFood.getText().toString());
         }
 
     }
