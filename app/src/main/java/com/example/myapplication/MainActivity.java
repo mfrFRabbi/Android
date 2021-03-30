@@ -14,18 +14,23 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-  private CheckBox milk,sugar,water;
-  private Button btn;
-  private TextView setText;
+    private RadioGroup radioGroup;
+    private RadioButton milk, sugar, water;
+    private Button btn;
+    private TextView setText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        radioGroup = findViewById(R.id.radioGroup);
 
         milk = findViewById(R.id.milkCheB);
         sugar = findViewById(R.id.sugarCheB);
@@ -37,19 +42,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void setListener(View view) {
-        Toast.makeText(this,"click",Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "click", Toast.LENGTH_SHORT).show();
 
-        if(view.getId() == R.id.showBtnID){
+        if (view.getId() == R.id.showBtnID) {
             StringBuilder strBuilder = new StringBuilder();
 
-            if(milk.isChecked()){
-                strBuilder.append(milk.getText().toString()+" is ordered"+"\n");
+            if (milk.isChecked()) {
+                strBuilder.append(milk.getText().toString() + " is ordered" + "\n");
             }
-            if(water.isChecked()){
-                strBuilder.append(water.getText().toString()+" is ordered"+"\n");
+            if (water.isChecked()) {
+                strBuilder.append(water.getText().toString() + " is ordered" + "\n");
             }
-            if(sugar.isChecked()){
-                strBuilder.append(sugar.getText().toString()+" is ordered"+"\n");
+            if (sugar.isChecked()) {
+                strBuilder.append(sugar.getText().toString() + " is ordered" + "\n");
             }
             setText.setText(strBuilder);
         }

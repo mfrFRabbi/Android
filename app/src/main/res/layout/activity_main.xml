@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
-    android:orientation="vertical"
     android:background="#00BCD4"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".MainActivity">
 
     <TextView
@@ -43,64 +43,72 @@
             android:layout_height="wrap_content"
             android:text="@string/title_text"
             android:textSize="20sp"
-            android:textStyle="bold"
-            />
-        <CheckBox
-            android:id="@+id/milkCheB"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="@string/milk_text"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:onClick="setListener"
+            android:layout_height="wrap_content">
 
-            />
-        <CheckBox
-            android:id="@+id/waterCheB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="@string/water_text"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:onClick="setListener"
+            <RadioButton
+                android:id="@+id/milkCheB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:onClick="setListener"
+                android:text="@string/milk_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
 
+                />
 
-
-            />
-        <CheckBox
-            android:id="@+id/sugarCheB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="@string/sugar_text"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:onClick="setListener"
+            <RadioButton
+                android:id="@+id/waterCheB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:onClick="setListener"
+                android:text="@string/water_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
 
 
-            />
+                />
+
+            <RadioButton
+                android:id="@+id/sugarCheB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:onClick="setListener"
+                android:text="@string/sugar_text"
+                android:textSize="20sp"
+                android:textStyle="bold"
+
+
+                />
+        </RadioGroup>
+
+
         <Button
             android:id="@+id/showBtnID"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Show"
             android:backgroundTint="#E91E63"
             android:onClick="setListener"
+            android:text="Show"
 
             />
 
     </LinearLayout>
 
-<TextView
-    android:id="@+id/showInTextView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:hint="Result"
-    android:textSize="50sp"
-    android:onClick="setListener"
-    />
+    <TextView
+        android:id="@+id/showInTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Result"
+        android:onClick="setListener"
+        android:textSize="50sp" />
 
 </LinearLayout>
