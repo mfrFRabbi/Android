@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     android:orientation="vertical"
-    android:gravity="center"
-    android:background="@android:color/darker_gray"
+    android:background="#00BCD4"
     tools:context=".MainActivity">
 
     <TextView
@@ -37,28 +36,71 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_gravity="center"
         android:padding="10dp">
 
-
-        <ImageView
-            android:id="@+id/image1"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:layout_marginBottom="20dp"
-            android:scaleType="fitXY"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_text"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            />
+        <CheckBox
+            android:id="@+id/milkCheB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/milk_text"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:onClick="setListener"
-            android:src="@drawable/app_store" />
 
-        <ImageView
-            android:id="@+id/image2"
-            android:layout_width="300dp"
-            android:layout_height="200dp"
-            android:scaleType="fitXY"
+            />
+        <CheckBox
+            android:id="@+id/waterCheB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/water_text"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:onClick="setListener"
-            android:src="@drawable/app_store" />
+
+
+
+            />
+        <CheckBox
+            android:id="@+id/sugarCheB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/sugar_text"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:onClick="setListener"
+
+
+            />
+        <Button
+            android:id="@+id/showBtnID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Show"
+            android:backgroundTint="#E91E63"
+            android:onClick="setListener"
+
+            />
+
     </LinearLayout>
 
-
+<TextView
+    android:id="@+id/showInTextView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:hint="Result"
+    android:textSize="50sp"
+    android:onClick="setListener"
+    />
 
 </LinearLayout>

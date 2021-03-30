@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -17,28 +18,40 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private ImageView img1, img2;
+  private CheckBox milk,sugar,water;
+  private Button btn;
+  private TextView setText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        img1 = findViewById(R.id.image1);
-        img2 = findViewById(R.id.image2);
+
+        milk = findViewById(R.id.milkCheB);
+        sugar = findViewById(R.id.sugarCheB);
+        water = findViewById(R.id.waterCheB);
+        btn = findViewById(R.id.showBtnID);
+        setText = findViewById(R.id.showInTextView);
+
 
     }
 
     public void setListener(View view) {
-        if (view.getId() == R.id.image1) {
-            LayoutInflater inflater = getLayoutInflater();
-            View view1 = inflater.inflate(R.layout.custom_layout,findViewById(R.id.customLayout));
-            Toast toast = new Toast(this);
-            toast.setDuration(Toast.LENGTH_SHORT);
-            toast.setGravity(Gravity.CENTER,0,0);
-            toast.setView(view1);
-            toast.show();
-        } else if (view.getId() == R.id.image2) {
+        Toast.makeText(this,"click",Toast.LENGTH_SHORT).show();
 
+        if(view.getId() == R.id.showBtnID){
+            StringBuilder strBuilder = new StringBuilder();
+
+            if(milk.isChecked()){
+                strBuilder.append(milk.getText().toString()+" is ordered"+"\n");
+            }
+            if(water.isChecked()){
+                strBuilder.append(water.getText().toString()+" is ordered"+"\n");
+            }
+            if(sugar.isChecked()){
+                strBuilder.append(sugar.getText().toString()+" is ordered"+"\n");
+            }
+            setText.setText(strBuilder);
         }
 
     }
