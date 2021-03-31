@@ -8,4 +8,5 @@
     <string name="water_text">Water</string>
     <string name="switch_text">Switch</string>
     <string name="result">Result_text</string>
+    <string name="show_date_picker_dialog">show date picker dialog</string>
 </resources>

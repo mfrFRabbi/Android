@@ -1,36 +1,47 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.DatePickerDialog;
 import android.os.Bundle;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+import android.widget.TextView;
 
 
-public class MainActivity extends AppCompatActivity {
-    private WebView aWebView;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    private TextView textView;
+    private Button button;
+    private DatePickerDialog datePickerDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        aWebView = findViewById(R.id.webViewId);
+        textView = findViewById(R.id.text_viewId);
+        button = findViewById(R.id.buttonId);
+        button.setOnClickListener(this);
 
-        WebSettings aWebSetting = aWebView.getSettings();
-        aWebSetting.setJavaScriptEnabled(true); //javaScript enabled
-        aWebView.setWebViewClient(new WebViewClient()); //show any tab in app
-        aWebView.loadUrl("https://msrdev.xyz/");
 
     }
 
-    //for go back
-
     @Override
-    public void onBackPressed() {
-        if(aWebView.canGoBack())
-            aWebView.goBack();
-        else
-            super.onBackPressed();
+    public void onClick(View v) {
+        DatePicker datePicker = new DatePicker(this);
+        int currentDay = datePicker.getDayOfMonth();
+        int currentMonth = datePicker.getMonth() + 1;
+        int currentYear = datePicker.getYear();
+
+        datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        textView.setText(dayOfMonth + " /" + (month + 1) + " /" + year);
+                    }
+                },
+                currentYear,currentMonth,currentDay);
+        datePickerDialog.show();
     }
 }
