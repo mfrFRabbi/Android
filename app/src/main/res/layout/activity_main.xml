@@ -107,7 +107,7 @@
         android:id="@+id/showInTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Result"
+        android:hint="@string/result"
         android:onClick="setListener"
         android:textSize="30sp" />
     <RatingBar
@@ -136,5 +136,15 @@
         android:thumbTint="@color/purple_200"
         android:max="10"
         />
+    <Switch
+        android:id="@+id/switchId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/switch_text"
+        android:textAllCaps="true"
+        android:textStyle="bold"
+        android:background="#03A9F4"
+        android:textSize="20sp"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 </LinearLayout>

@@ -2,22 +2,15 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private TextView textView;
     //seekBar
     private SeekBar seekBar;
+    //switch
+    private Switch aSwitch;
+
 
 
 
@@ -75,6 +71,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //switch
+        aSwitch = findViewById(R.id.switchId);
+        aSwitch.setOnCheckedChangeListener((CompoundButton buttonView, boolean isChecked) -> {
+            if(isChecked){
+                Toast.makeText(MainActivity.this,"ON",Toast.LENGTH_SHORT).show();
+            }else {
+                Toast.makeText(MainActivity.this,"OFF",Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 

@@ -6,4 +6,6 @@
     <string name="milk_text">Milk</string>
     <string name="sugar_text">Sugar</string>
     <string name="water_text">Water</string>
+    <string name="switch_text">Switch</string>
+    <string name="result">Result_text</string>
 </resources>
