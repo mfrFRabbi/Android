@@ -9,4 +9,6 @@
     <string name="switch_text">Switch</string>
     <string name="result">Result_text</string>
     <string name="show_date_picker_dialog">show date picker dialog</string>
+    <string name="show_time">show time</string>
+    <string name="time_picker_dialog">Time picker dialog</string>
 </resources>
