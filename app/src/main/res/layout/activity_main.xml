@@ -10,42 +10,22 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <TimePicker
-        android:id="@+id/timePickerId"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <Button
-            android:id="@+id/showTimeId"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/show_time"/>
-        <TextView
-            android:id="@+id/showTimeTextId"
-            android:layout_marginLeft="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/dialog_buttonId"
+    <AnalogClock
+        android:id="@+id/analogClockId"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/time_picker_dialog"
-        />
-    <TextView
-        android:id="@+id/timeTextId"
+        android:layout_marginBottom="20dp"
+        android:background="@color/purple_200"/>
+    <TextClock
+        android:id="@+id/textClockId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        />
+        android:layout_gravity="center"/>
+    <DigitalClock
+        android:id="@+id/digitalClockId"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 
 </LinearLayout>
