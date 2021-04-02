@@ -10,36 +10,17 @@
     android:padding="10dp"
     tools:context=".MainActivity">
 
-    <AnalogClock
-        android:id="@+id/analogClockId"
-        android:layout_gravity="center"
+    <ZoomControls
+        android:id="@+id/zoomId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:background="@color/purple_200"/>
-    <TextClock
-        android:id="@+id/textClockId"
+        android:layout_gravity="right"/>
+    <ImageView
+        android:id="@+id/imageId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:src="@drawable/umdred"
         android:layout_gravity="center"/>
-    <DigitalClock
-        android:id="@+id/digitalClockId"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom">
-        <Button
-            android:id="@+id/btnID"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Exit for check alert message"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
-    </LinearLayout>
 
 
 </LinearLayout>
